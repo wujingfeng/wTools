@@ -6,20 +6,21 @@ import (
 )
 
 func InitWatermark(router *gin.RouterGroup) {
+	watermark := api.Watermark{}
 	r := router.Group("/watermark")
 	{
-		r.GET("video", (api.Watermark{}).Video)
-		r.GET("ppx", (api.Watermark{}).PPX)
-		r.GET("douyin", (api.Watermark{}).DouYin)
-		r.GET("zuiyou", (api.Watermark{}).ZuiYou)
-		r.GET("weishi", (api.Watermark{}).WeiShi)
-		r.GET("huoshan", (api.Watermark{}).HuoShan)
-		r.GET("weibo", (api.Watermark{}).WeiBo)
-		r.GET("kuaishou", (api.Watermark{}).KuaiShou)
-		r.GET("quanmin", (api.Watermark{}).QuanMin)
-		r.GET("ppgx", (api.Watermark{}).Ppgx)
-		r.GET("xigua", (api.Watermark{}).XiGua)
-		r.GET("momo", (api.Watermark{}).MoMo)
-		r.GET("doupai", (api.Watermark{}).DouPai)
+		r.GET("video", watermark.Video)
+		r.GET("ppx", watermark.PPX)
+		r.GET("douyin", watermark.DouYin)
+		r.GET("zuiyou", watermark.ZuiYou)
+		r.GET("weishi", watermark.WeiShi)
+		r.GET("huoshan", watermark.HuoShan)
+		r.GET("weibo", watermark.WeiBo)
+		r.GET("kuaishou", watermark.KuaiShou)
+		r.GET("quanmin", watermark.QuanMin)
+		r.GET("ppgx", watermark.Ppgx)
+		r.GET("xigua", watermark.XiGua)
+		r.GET("momo", watermark.MoMo)
+		r.GET("doupai", watermark.DouPai)
 	}
 }

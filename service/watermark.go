@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"os"
+	"strings"
 	"wTools/enum/ten"
 	"wTools/global"
 	"wTools/param"
@@ -36,21 +38,20 @@ func (wm *Watermark) VideoDownload(url string, route string, ctx *gin.Context) {
 
 	fmt.Println(fp)
 	key := ten.VIDEO_KEY + md5Str
-	//global.Redis.Del(key)
-	//fpr := global.Redis.Get(key)
+	fpr := global.Redis.Get(key)
 	var err error
 	filename := ""
-	//filepath := fpr.Val()
-	//if filepath != "" {
-	//	fList := strings.Split(filepath, "/")
-	//	filename = fList[len(fList)-1]
-	//	if _, err = os.Stat(filepath); err == nil {
-	//		// 如果文件存在, 则直接下载
-	//		util.DownloadToClient(filepath, filename, ctx)
-	//		return
-	//	}
-	//
-	//}
+	filepath := fpr.Val()
+	if filepath != "" {
+		fList := strings.Split(filepath, "/")
+		filename = fList[len(fList)-1]
+		if _, err = os.Stat(filepath); err == nil {
+			// 如果文件存在, 则直接下载
+			util.DownloadToClient(filepath, filename, ctx)
+			return
+		}
+
+	}
 
 	// 其他情况走直接下载流程
 	url = ten.TEN_HOST + route + "?url=" + url
