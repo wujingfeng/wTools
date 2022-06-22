@@ -15,3 +15,4 @@
 # vendor/
 /.idea/*
 /runtime/*
+/config.yaml

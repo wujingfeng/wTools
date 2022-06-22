@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"wTools/core"
+	"wTools/global"
 	"wTools/router"
 )
 
@@ -71,7 +72,9 @@ func setupRouter() *gin.Engine {
 func main() {
 	//r := setupRouter()
 	r := router.InitRouters()
+	global.Viper = core.Viper()
 	core.InitRedis()
+
 	// Listen and Server in 0.0.0.0:8080
 	r.Run(":8888")
 }
