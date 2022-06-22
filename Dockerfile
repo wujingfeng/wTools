@@ -15,7 +15,6 @@ FROM alpine:latest
 WORKDIR /app
 COPY --from=0 /app/w_tools ./
 COPY --from=0 /app/config.yaml ./
-COPY --from=0 /app/resource ./resource
 
 EXPOSE 8888
 
