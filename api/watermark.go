@@ -6,66 +6,85 @@ import (
 	"wTools/service"
 )
 
-func Video(ctx *gin.Context) {
+type Watermark struct{}
+
+// Video
+//  @Description: 聚合去水印, 自动识别地址来源
+//  @param ctx
+//  @author	wujingfeng 2022-06-22 10:31:08
+func (wm *Watermark) Video(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
 
-	service.Video(param, ctx)
+	watermark := service.Watermark{}
+	watermark.Video(param, ctx)
 }
 
-func PPX(ctx *gin.Context) {
+func (wm *Watermark) PPX(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.PPX(param, ctx)
+	watermark := service.Watermark{}
+	watermark.PPX(param, ctx)
 }
 
-func DouYin(ctx *gin.Context) {
+func (wm *Watermark) DouYin(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.DouYin(param, ctx)
+	watermark := service.Watermark{}
+	watermark.DouYin(param, ctx)
 }
 
-func ZuiYou(ctx *gin.Context) {
+func (wm *Watermark) ZuiYou(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.ZuiYou(param, ctx)
+	watermark := service.Watermark{}
+	watermark.ZuiYou(param, ctx)
 }
 
-func WeiShi(ctx *gin.Context) {
+func (wm *Watermark) WeiShi(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.WeiShi(param, ctx)
+	watermark := service.Watermark{}
+	watermark.WeiShi(param, ctx)
 }
 
-func HuoShan(ctx *gin.Context) {
+func (wm *Watermark) HuoShan(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.HuoShan(param, ctx)
+	watermark := service.Watermark{}
+	watermark.HuoShan(param, ctx)
 }
 
-func WeiBo(ctx *gin.Context) {
+func (wm *Watermark) WeiBo(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.WeiBo(param, ctx)
+	watermark := service.Watermark{}
+	watermark.WeiBo(param, ctx)
 }
 
-func KuaiShou(ctx *gin.Context) {
+func (wm *Watermark) KuaiShou(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.KuaiShou(param, ctx)
+	watermark := service.Watermark{}
+	watermark.KuaiShou(param, ctx)
 }
 
-func QuanMin(ctx *gin.Context) {
+func (wm *Watermark) QuanMin(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.QuanMin(param, ctx)
+	watermark := service.Watermark{}
+	watermark.QuanMin(param, ctx)
 }
 
-func Ppgx(ctx *gin.Context) {
+func (wm *Watermark) Ppgx(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.Ppgx(param, ctx)
+	watermark := service.Watermark{}
+	watermark.Ppgx(param, ctx)
 }
 
-func XiGua(ctx *gin.Context) {
+func (wm *Watermark) XiGua(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.XiGua(param, ctx)
+	watermark := service.Watermark{}
+	watermark.XiGua(param, ctx)
 }
-func MoMo(ctx *gin.Context) {
+func (wm *Watermark) MoMo(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.MoMo(param, ctx)
+	watermark := service.Watermark{}
+	watermark.MoMo(param, ctx)
 }
-func DouPai(ctx *gin.Context) {
+func (wm *Watermark) DouPai(ctx *gin.Context) {
 	param := request.ParamUrl(ctx)
-	service.DouPai(param, ctx)
+	watermark := service.Watermark{}
+	watermark.DouPai(param, ctx)
 }
