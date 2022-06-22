@@ -1,0 +1,8 @@
+redis:
+  addr: "47.108.156.124:6380"
+  password: "jc"
+  db: 0
+  maxRetries: 3
+  poolSize: 50
+  prefix: "wTools:"
+  ttl: 86400
