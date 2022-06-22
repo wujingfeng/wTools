@@ -10,6 +10,7 @@ func InitRouters() *gin.Engine {
 	wTools := router.Group("/wTools")
 	{
 		InitWatermark(wTools)
+		InitHotSearch(wTools)
 	}
 	return router
 }
