@@ -8,6 +8,10 @@ ENV GOARCH=amd64
 
 WORKDIR /app
 COPY . .
+
+#EXPOSE 8889
+#RUN go env && go run main.go
+
 RUN go env && go build -o w_tools .
 
 FROM alpine:latest
