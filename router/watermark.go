@@ -7,8 +7,9 @@ import (
 
 func InitWatermark(router *gin.RouterGroup) {
 	watermark := api.Watermark{}
-	r := router.Group("/watermark")
+	r := router.Group("watermark")
 	{
+		r.GET("download", watermark.Download)
 		r.GET("video", watermark.Video)
 		r.GET("ppx", watermark.PPX)
 		r.GET("douyin", watermark.DouYin)

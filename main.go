@@ -70,6 +70,10 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
+	//http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	//	fmt.Println("hello")
+	//})
+	//_ = http.ListenAndServe("localhost:8000", nil)
 	//r := setupRouter()
 	r := router.InitRouters()
 	global.Viper = core.Viper()
