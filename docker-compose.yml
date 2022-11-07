@@ -1,0 +1,36 @@
+version: "2.2"
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  docker-in-docker:
+    driver: local
+
+services:
+  w_wools:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: "w_tools"
+    volumes:
+      - ~/work:/www
+      - ~/work/logs:/data/log
+      - ~/work/runtime:/data/runtime
+    ports:
+      - "8888:8888"
+    networks:
+      - backend
+  docker-in-docker:
+    image: docker:19.03-dind
+    container_name: docker-in-docker
+    environment:
+      DOCKER_TLS_SAN: DNS:docker-in-docker
+    privileged: TRUE
+    volumes:
+      - ~/work:/www
+    expose:
+      - 2375
+    networks:
+      - backend
